@@ -8,7 +8,7 @@
 Stylesheets") mixin that helps you compose media queries in an elegant
 way.
 
-- compiles keywords and `px`/`em` values to `em`-based queries ([a good thing](http://css-tricks.com/zooming-squishes))
+- compiles keywords and `px` values to `px`-based queries for use with frameworks that are `px`-based
 - provides fallbacks for older browsers (see [Mobile-first Responsive Web Design and IE8](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) on the Guardian's developer blog).
 
 Here is a very basic example:
@@ -36,12 +36,12 @@ $mq-breakpoints: (
 Compiles to:
 
 ```css
-@media (min-width: 20em) and (max-width: 46.24em) {
+@media (min-width: 320px) and (max-width: 739px) {
   .foo {
     background: red;
   }
 }
-@media (min-width: 46.25em) {
+@media (min-width: 740px) {
   .foo {
     background: green;
   }
@@ -247,7 +247,7 @@ reference so you can use the notation that best matches your needs:
 While developing, it can be nice to always know which breakpoint is
 active. To achieve this, set the `$mq-show-breakpoints` variable to
 be a list of the breakpoints you want to debug, ordered by width.
-The name of the active breakpoint and its pixel and em values will
+The name of the active breakpoint and its pixel value will
 then be shown in the top right corner of the viewport.
 
 ![$mq-show-breakpoints](https://raw.githubusercontent.com/sass-mq/sass-mq/master/show-breakpoints.gif)
@@ -263,7 +263,7 @@ for screens only, set `$mq-media-type`:
 $mq-media-type: screen;
 
 .screen-only-element {
-    @include mq(mobile) {
+    @include mq($until: mobile) {
         width: 300px;
     }
 }
@@ -272,7 +272,7 @@ $mq-media-type: screen;
 #### CSS output
 
 ```css
-@media screen and (max-width: 19.99em) {
+@media screen and (max-width: 319px) {
     .screen-only-element {
         width: 300px;
     }
@@ -339,5 +339,5 @@ These companies and projects use Sass MQ:
 
 ----
 
-Looking for a more advanced sass-mq, with support for height and other niceties?  
+Looking for a more advanced sass-mq, with support for height and other niceties?
 Give [@mcaskill's fork of sass-mq](https://github.com/mcaskill/sass-mq) a try.

@@ -41,10 +41,6 @@
     @include mq($from: desktop) {
         content: "from-desktop";
     }
-    // From em value
-    @include mq($until: 70em) {
-        content: "to-70em";
-    }
     // To pixel value
     @include mq($until: 1100px) {
         content: "to-1100px";

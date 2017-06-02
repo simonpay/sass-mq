@@ -8,7 +8,7 @@
 Stylesheets") mixin that helps you compose media queries in an elegant
 way.
 
-- compiles keywords and `px` values to `px`-based queries for use with frameworks that are `px`-based
+- compiles keywords and `px` values to `px`-based queries for use with `px`-based frameworks.
 - provides fallbacks for older browsers (see [Mobile-first Responsive Web Design and IE8](http://www.theguardian.com/info/developer-blog/2013/oct/14/mobile-first-responsive-ie8) on the Guardian's developer blog).
 
 Here is a very basic example:
